@@ -16,7 +16,7 @@ export default function Home() {
         ]);
         setData({ trending, movies, tv });
       } catch (err) {
-        setError("Failed to fetch data. Check your API key.");
+        setError(err instanceof Error ? err.message : 'Failed to fetch data from TMDB.');
       } finally {
         setLoading(false);
       }

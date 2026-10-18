@@ -11,7 +11,7 @@ export const getImageUrl = (path, size = 'w500') => {
 
 const request = async (url) => {
   if (!TOKEN) {
-    throw new Error('Missing VITE_TMDB_TOKEN. Add it to the project-root .env file and restart Vite.');
+    throw new Error('Missing VITE_TMDB_TOKEN. Configure it in your deployment settings or project-root .env file.');
   }
 
   const res = await fetch(url, {
