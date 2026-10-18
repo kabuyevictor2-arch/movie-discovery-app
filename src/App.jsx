@@ -3,10 +3,10 @@ import { createTheme, ThemeProvider, CssBaseline } from '@mui/material';
 import { WatchlistProvider, useWatchlist } from './context/WatchlistContext';
 import { fetchMovies, fetchTVShows } from './services/tmdb';
 import Layout from './components/Layout';
-import Home from './pages/Home';
-import Search from './pages/Search';
-import Details from './pages/Details';
-import GridPage from './pages/GridPage';
+import Home from './Pages/Home';
+import Search from './Pages/Search';
+import Details from './Pages/Details';
+import GridPage from './Pages/Gridpage';
 
 const darkTheme = createTheme({
   palette: { mode: 'dark', primary: { main: '#e50914' } },
