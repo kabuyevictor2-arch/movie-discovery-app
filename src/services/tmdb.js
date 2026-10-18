@@ -1,5 +1,5 @@
 const BASE_URL = 'https://api.themoviedb.org/3';
-const TOKEN = import.meta.env.VITE_TMDB_TOKEN?.trim();
+const TOKEN = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwZTJkYWQzYmRmOTllZmRiOTQ3NWQ3NGRmMGIwM2E1NSIsIm5iZiI6MTc5MjMzNDIzOC4wNTYsInN1YiI6IjZhZDRkOTllYjlkNjNlMzU4NTNkYWY3YiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.SeHYw5UHsNqJRFFrs0UJiNv0OdP-WXmFx0qQXobjJQc';
 
 const placeholderSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="500" height="750"><rect width="100%" height="100%" fill="#222"/><text x="50%" y="50%" fill="#fff" text-anchor="middle" font-family="sans-serif" font-size="28">No image</text></svg>';
 const PLACEHOLDER_IMAGE = `data:image/svg+xml,${encodeURIComponent(placeholderSvg)}`;
@@ -10,10 +10,6 @@ export const getImageUrl = (path, size = 'w500') => {
 };
 
 const request = async (url) => {
-  if (!TOKEN) {
-    throw new Error('Missing VITE_TMDB_TOKEN. Configure it in your deployment settings or project-root .env file.');
-  }
-
   const res = await fetch(url, {
     headers: {
       accept: 'application/json',
