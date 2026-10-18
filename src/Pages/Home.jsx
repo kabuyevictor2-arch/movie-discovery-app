@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Box, CircularProgress, Alert } from '@mui/material';
 import { fetchTrending, fetchMovies, fetchTVShows } from '../services/tmdb';
-import ContentRow from '../components/ContentRow';
+import ContentRow from '../components/Contentrow';
 
 export default function Home() {
   const [data, setData] = useState({ trending: [], movies: [], tv: [] });
